@@ -27,7 +27,7 @@ RIESGOECOPETL <- sd (Retornos$ECOPETL)
 RIESGOEXITO <- sd (Retornos$EXITO)
 MATRIZCOV <- cov (Retornos)
 View(MATRIZCOV)
-
+hlkhlhlkhl
 
 
   
