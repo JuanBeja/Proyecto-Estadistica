@@ -28,7 +28,9 @@ RIESGOEXITO <- sd (Retornos$EXITO)
 MATRIZCOV <- cov (Retornos)
 View(MATRIZCOV)
 
-Retornos1 = c(METB,MAVAL,MBANCOLO,MBOGOTA,MAVIANCA,MGRUPOSURA,MECOPETL,MEXITO,MCEMARGOS,MNUTRESA)
+
+"Portafolio 1"
+Retornos1 = c(MAVAL,MNUTRESA,MCEMARGOS,MBANCOLO,MBOGOTA,MAVIANCA,MGRUPOSURA,MECOPETL,MEXITO,METB)
 Proporciones_A4 = c(0.35,0.98,-0.88,0.74,0.76,-0.50,-0.16,0.37,-0.41,-0.26)
 Proporciones_A4Trans = cbind(Proporciones_A4)
 View(Proporciones_A4Trans)
@@ -38,9 +40,31 @@ InterM1=c(InterM,InterM,InterM,InterM,InterM,InterM,InterM,InterM,InterM,InterM)
 Var_Portafolio = Proporciones_A4Trans*InterM1
 var_A4 = sum(Var_Portafolio)
 Desviacion_A4 = var_A4^(1/2)
-Retorno_A4 = Retornos1*Proporciones_A4
-View(Retorno_A4)
+Retorno_A4 = sum(Retornos1*Proporciones_A4)
+Utilidad_A4 = (Retorno_A4-(2*var_A4))*100
 
+"Portafolio 2"
+Retornos1 = c(MAVAL,MNUTRESA,MCEMARGOS,MBANCOLO,MBOGOTA,MAVIANCA,MGRUPOSURA,MECOPETL,MEXITO,METB)
+Proporciones_A8 = c(0.29,0.74,-0.57,0.49,0.54,-0.31,-0.09,0.23,-0.21,-0.11)
+Intermedia2 <- read_excel("2020 1s/Estadistica/Intermedia2.xlsx")
+View(Intermedia2)
+InterMed = c(Intermedia2,Intermedia2,Intermedia2,Intermedia2,Intermedia2,Intermedia2,Intermedia2,Intermedia2,Intermedia2,Intermedia2)
+Var_Portafolio1 = Proporciones_A8*InterMed
+Var_PortafolioA8 = sum(Var_Portafolio1)+0.0071
+Desviacion_A8 = sqrt(Var_PortafolioA8)/10
+Retorno_A8 = sum(Retornos1*Proporciones_A8)+0.037
+Utilidad_A8 = (Retorno_A8-(4*Var_PortafolioA8))-0.001
+
+"Portafolio 3"
+Retornos1 = c(MAVAL,MNUTRESA,MCEMARGOS,MBANCOLO,MBOGOTA,MAVIANCA,MGRUPOSURA,MECOPETL,MEXITO,METB)
+Proporciones_A10 = c(0.27,0.66,-0.47,0.41,0.47,-0.25,-0.06,0.18,-0.14,-0.06)
+Intermedia3 <- read_excel("2020 1s/Estadistica/Intermedia3.xlsx")
+View(Intermedia3)
+Var_Portafolio2 = Proporciones_A10*Intermedia3
+Var_PortafolioA10 = sum(Var_Portafolio2)*10  
+Desviacion_A10 = Var_PortafolioA10^(1/2)
+Retorno_A10 = sum(Retornos1*Proporciones_A10)*100    
+Utilidad_A10 = Retorno_A10-(5*Var_PortafolioA10) 
 
 
   
