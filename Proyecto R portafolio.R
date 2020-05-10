@@ -28,13 +28,18 @@ RIESGOEXITO <- sd (Retornos$EXITO)
 MATRIZCOV <- cov (Retornos)
 View(MATRIZCOV)
 
-Retornos = c(METB,MAVAL,MBANCOLO,MBOGOTA,MAVIANCA,MGRUPOSURA,MECOPETL,MEXITO,MCEMARGOS,MNUTRESA)
+Retornos1 = c(METB,MAVAL,MBANCOLO,MBOGOTA,MAVIANCA,MGRUPOSURA,MECOPETL,MEXITO,MCEMARGOS,MNUTRESA)
 Proporciones_A4 = c(0.35,0.98,-0.88,0.74,0.76,-0.50,-0.16,0.37,-0.41,-0.26)
 Proporciones_A4Trans = cbind(Proporciones_A4)
 View(Proporciones_A4Trans)
-Intermedia = (Proporciones_A4*MATRIZCOV)
-View(Intermedia)
-Var_Portafolio = Proporciones_A4Trans*Intermedia
+InterM <- read_excel("2020 1s/Estadistica/InterM.xlsx")
+View(InterM)
+InterM1=c(InterM,InterM,InterM,InterM,InterM,InterM,InterM,InterM,InterM,InterM)
+Var_Portafolio = Proporciones_A4Trans*InterM1
+var_A4 = sum(Var_Portafolio)
+Desviacion_A4 = var_A4^(1/2)
+Retorno_A4 = Retornos1*Proporciones_A4
+View(Retorno_A4)
 
 
 
