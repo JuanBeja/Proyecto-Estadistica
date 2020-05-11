@@ -65,6 +65,20 @@ Var_PortafolioA10 = sum(Var_Portafolio2)*10
 Desviacion_A10 = Var_PortafolioA10^(1/2)
 Retorno_A10 = sum(Retornos1*Proporciones_A10)*100    
 Utilidad_A10 = Retorno_A10-(5*Var_PortafolioA10) 
+
+#PORTAFOLIO MINIMA VARIANZA
+Retornos1 = c(MAVAL,MNUTRESA,MCEMARGOS,MBANCOLO,MBOGOTA,MAVIANCA,MGRUPOSURA,MECOPETL,MEXITO,METB)
+Proporciones_MV = c(0.2504,0.6203,-0.3720,0.3140,0.4051,-0.1996,-0.0668,0.1504,-0.0951,-0.0069)
+IntermediaMV <- read_excel("2020 1s/Estadistica/IntermediaMV.xlsx")
+View(IntermediaMV)
+Var_PortafolioMV = sum(Proporciones_MV*IntermediaMV)
+Desv_PortafolioMinV = Var_PortafolioMV^(1/2)
+Retorno_MinV = sum(Retornos1*Proporciones_MV)
+
+#fRONTERA EFICIENTE
+DESVIACIONES = c(0.009,0.012,0.018,0.032,0.064,0.09,0.012)
+RETORNOSFE = c(0.000398537,0.000597194,0.000980104,0.001854322,0.003834443,0.005439652,0.00729074)
+
  
 r0 = (0.04109/360*100)
 riesgoCOLCAP <- 0.007545224677820
