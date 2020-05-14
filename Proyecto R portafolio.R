@@ -181,6 +181,22 @@ RiesNoDiver<-CovarianzaMedia*9/10
 
 VarianzaP<-RD+RiesNoDiver
 
+#Graficas retornos acciones
+layout(matrix(c(1:10), nrow=2, byrow=FALSE))
+
+
+plot(datos_bloomberg$AVAL,main = "Retorno Aval", xlab = "Dias", ylab = "Precios", col = "Red")
+plot(datos_bloomberg$NUTRESA,main = "Retorno Nutresa", xlab = "Dias", ylab = "Precios", col = "Red")
+plot(datos_bloomberg$CEMARGOS,main = "Retorno Cemargos", xlab = "Dias", ylab = "Precios", col = "Red")
+plot(datos_bloomberg$BANCOLO,main = "Retorno Bancolombia", xlab = "Dias", ylab = "Precios", col = "Red")
+plot(datos_bloomberg$BOGOTA,main = "Retorno Bogota", xlab = "Dias", ylab = "Precios", col = "Red")
+plot(datos_bloomberg$AVIANCA,main = "Retorno Avianca", xlab = "Dias", ylab = "Precios", col = "Red")
+plot(datos_bloomberg$GRUPOSURA,main = "Retorno Grupo Sura", xlab = "Dias", ylab = "Precios", col = "Red")
+plot(datos_bloomberg$ECOPETROL,main = "Retorno Ecopetrol", xlab = "Dias", ylab = "Precios", col = "Red")
+plot(datos_bloomberg$EXITO,main = "Retorno Exito", xlab = "Dias", ylab = "Precios", col = "Red")
+plot(datos_bloomberg$ETB,main = "Retorno ETB", xlab = "Dias", ylab = "Precios", col = "Red")
+
+
   
     
   
