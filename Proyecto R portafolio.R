@@ -36,7 +36,8 @@ Proporciones_A4Trans = cbind(Proporciones_A4)
 View(Proporciones_A4Trans)
 InterM <- read_excel("2020 1s/Estadistica/InterM.xlsx")
 View(InterM)
-Var_Portafolio = Proporciones_A4Trans*InterM
+InterM1=c(InterM,InterM,InterM,InterM,InterM,InterM,InterM,InterM,InterM,InterM)
+Var_Portafolio = Proporciones_A4Trans*InterM1
 var_A4 = sum(Var_Portafolio)
 Desviacion_A4 = var_A4^(1/2)
 Retorno_A4 = sum(Retornos1*Proporciones_A4)
@@ -47,7 +48,8 @@ Retornos1 = c(MAVAL,MNUTRESA,MCEMARGOS,MBANCOLO,MBOGOTA,MAVIANCA,MGRUPOSURA,MECO
 Proporciones_A8 = c(0.29,0.74,-0.57,0.49,0.54,-0.31,-0.09,0.23,-0.21,-0.11)
 Intermedia2 <- read_excel("2020 1s/Estadistica/Intermedia2.xlsx")
 View(Intermedia2)
-Var_Portafolio1 = Proporciones_A8*InterMedia2
+InterMed = c(Intermedia2,Intermedia2,Intermedia2,Intermedia2,Intermedia2,Intermedia2,Intermedia2,Intermedia2,Intermedia2,Intermedia2)
+Var_Portafolio1 = Proporciones_A8*InterMed
 Var_PortafolioA8 = sum(Var_Portafolio1)+0.0071
 Desviacion_A8 = sqrt(Var_PortafolioA8)/10
 Retorno_A8 = sum(Retornos1*Proporciones_A8)+0.037
@@ -93,28 +95,15 @@ SharpeETB<-(METB-r0)/RIESGOETB
 Sharpes<- c(SharpeAVAL,SharpeNUTRESA,SharpeCEMARGOS,SharpeBANCOLO,SharpeBOGOTA,SharpeAVIANCA,SharpeSURA,SharpeECOPETROL,SharpeEXITO,SharpeETB)
 RAR <- r0+ (Sharpes*riesgoCOLCAP)
 
-VarIngen <- c(25/100,25/100,25/100,25/100)*cov(Retornos[,1:4])
-a<-c(25/100,25/100,25/100,25/100)
-MatrizTrans1<-cbind(a)
-Varingenuo<-Intermedia*MatrizTrans1
-c(Varingenuo)
-c(Varingenuo[1])
-f<-c(Varingenuo[1])
-unlist(Varingenuo)
-unlist(Varingenuo[,1])
-cbind(Varingenuo[1])
-f2<-cbind(Varingenuo[1])
-sum(f2)
-Varianza<-f2
-VarianzaIngenuo<-sum(Varianza)
-RetornosEsp<-c(RTGS,RTGA,RTBC,RTBB)
-RetornoIngen<-RetornosEsp*a
-z<-cbind(RetornoIngen)
-RetornoIngenuo<-sum(z)
-VarGS<-RIGS^2
-VarGA<-RIGA^2
-VarBC<-RIBC^2
-VarBB<-RIBB^2
+Riesgo Diversificable
+VarAVAL<- RIESGOAVAL^2
+VarNUTRESA<-RIESGONUTRESA^2
+VarCEMARGOS<-RIESGOCEMARGOS^2
+VarBANCOLO<-RIESGOBANCOLO^2
+VarBOGOTA<-RIESGOBOGOTA^2
+VarAVIANCA<-RIESGOAVIANCA^2
+VarGRUPOSURA<-RIESGOGRUPOSURA^2
+Var<-RIESGOCEMARGOS^2
 Varianzas<-c(VarGS,VarGA,VarBC,VarBB)
 VarianzaMedia<-mean(Varianzas)
 Riesgodiver<-VarianzaMedia/4
