@@ -197,6 +197,47 @@ plot(datos_bloomberg$ECOPETROL,main = "Retorno Ecopetrol", xlab = "Dias", ylab =
 plot(datos_bloomberg$EXITO,main = "Retorno Exito", xlab = "Dias", ylab = "Precios", col = "Red")
 plot(datos_bloomberg$ETB,main = "Retorno ETB", xlab = "Dias", ylab = "Precios", col = "Red")
 
+#Grafica1
+RIESGO =c(RIESGOETB,RIESGOAVIANCA,RIESGOAVAL,RIESGONUTRESA,RIESGOCEMARGOS,RIESGOBANCOLO,RIESGOBOGOTA,RIESGOSURA,RIESGOECOPETL,RIESGOEXITO )
+RETORNO =c(METB,MAVIANCA,MAVAL,MNUTRESA,MCEMARGOS,MBANCOLO,MBOGOTA,MGRUPOSURA,MECOPETL,MEXITO)
+plot(RIESGO,RETORNO,main = "RiesgoVSRetorno",pch =c(1,2,3,4,5,6,7,8,9,10))
+legend("topright",legend = c("Etb","Avianca","Aval","Nutresa","Argos","Bancolombia","Bogtá","Sura","Ecopetrol","Éxito"),pch =c(1,2,3,4,5,6,7,8,9,10))
+
+#Grafica2
+RIESGOING =c(RIESGOETB,RIESGOAVIANCA,RIESGOAVAL,RIESGONUTRESA,RIESGOCEMARGOS,RIESGOBANCOLO,RIESGOBOGOTA,RIESGOSURA,RIESGOECOPETL,RIESGOEXITO,Desv_PortafolioING )
+RETORNOING =c(METB,MAVIANCA,MAVAL,MNUTRESA,MCEMARGOS,MBANCOLO,MBOGOTA,MGRUPOSURA,MECOPETL,MEXITO,Desv_PortafolioING)
+plot(RIESGOING,RETORNOING,main = "RiesgoVSRetorno",pch =c(1,2,3,4,5,6,7,8,9,10,11))
+legend("topleft",legend = c("Etb","Avianca","Aval","Nutresa","Argos","Bancolombia","Bogtá","Sura","Ecopetrol","Éxito","PortIngenuo"),pch =c(1,2,3,4,5,6,7,8,9,10,11))
+
+#Grafica3
+RIESGOMIN =c(RIESGOETB,RIESGOAVIANCA,RIESGOAVAL,RIESGONUTRESA,RIESGOCEMARGOS,RIESGOBANCOLO,RIESGOBOGOTA,RIESGOSURA,RIESGOECOPETL,RIESGOEXITO,Desv_PortafolioING,Desv_PortafolioMinV )
+RETORNOMIN =c(METB,MAVIANCA,MAVAL,MNUTRESA,MCEMARGOS,MBANCOLO,MBOGOTA,MGRUPOSURA,MECOPETL,MEXITO,Retorno_ING,Retorno_MinV)
+plot(RIESGOMIN,RETORNOMIN,main = "RiesgoVSRetorno",pch =c(1,2,3,4,5,6,7,8,9,10,11,12))
+legend("bottomright",legend = c("Etb","Avianca","Aval","Nutresa","Argos","Bancolombia","Bogtá","Sura","Ecopetrol","Éxito","PortIngenuo","VarMin"),pch =c(1,2,3,4,5,6,7,8,9,10,11,12))
+
+#Grafica4
+#VerifcarDatosConMafe
+#Graficas8
+#BlogspotAval
+boxplot(Bloomberg[2:1396,1],main="Aval")
+#BlogspotNutresa
+boxplot(Bloomberg[2:1396,2],main="Nutresa")
+#BlogspotArgos
+boxplot(Bloomberg[2:1396,3],main="Argos")
+#BlogspotBancolombia
+boxplot(Bloomberg[2:1396,4],main="Bancolombia")
+#BlogspotBogota
+boxplot(Bloomberg[2:1396,5],main="Bogotá")
+#BlogspotAvianca
+boxplot(Bloomberg[2:1396,6],main="Avianca")
+#BlogspotSura
+boxplot(Bloomberg[2:1396,7],main="Sura")
+#BlogspotEcopetrol
+boxplot(Bloomberg[2:1396,8],main="Ecopetrol")
+#BlogspotExito
+boxplot(Bloomberg[2:1396,9],main="Exito")
+#BlogspotEtb
+boxplot(Bloomberg[2:1396,10],main="Etb")
 
   
     
