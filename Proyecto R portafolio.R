@@ -114,30 +114,72 @@ VarECOPETROL<-RIESGOECOPETROL^2
 VarEXITO<-RIESGOEXITO^2
 VarETB<-RIESGOETB^2
 
-Varianzas<-c(VarGS,VarGA,VarBC,VarBB)
+Varianzas<-c(VarAVAL,VarNUTRESA,VarCEMARGOS,VarBANCOLO,VarBOGOTA,VarAVIANCA,VarGRUPOSURA,VarECOPETROL,VarEXITO,VarETB)
 VarianzaMedia<-mean(Varianzas)
 RD <-VarianzaMedia/10
 
-Riesgo no diversificable
-MatCov<-cov(Retornos[,1:4])
-V1<-c(MatCov[,1])
-V2<-c(MatCov[,2]-MatCov[2,2])
-V2a<-c(MatCov[,2])
+#Riesgo no diversificable
+V1<-c(MATRIZCOV[,1]-MATRIZCOV[1,1])
+V1a<-c(MATRIZCOV[,1])
+V1a[-1]
+
+V2<-c(MATRIZCOV[,2]-MATRIZCOV[2,2])
+V2a<-c(MATRIZCOV[,2])
 V2a[-2]
-V2<-V2a[-2]
-v3a<-c(MatCov[,3])
-V3<-v3a[-3]
-V4<-c(MatCov[1:3,4])
-V1<-V1[-1]
-mean(mean(V1),mean(V2),mean(V3),mean(V4))
-R<-mean(V1)
-X<-mean(V1)
-L<-mean(V1)
-W<-mean(V1)
-CovarMedia<-sum(R,X,L,W)
-CovarianzaMedia<-CovarMedia/4
-RiesNoDiver<-CovarianzaMedia*3/4
-VarianzaP<-Riesgodiver+RiesNoDiver
+
+
+V3 = C(MATRIZCOV[,3]-MATRIZCOV[3,3])
+V3a<-c(MATRIZCOV[,3])
+V3a[-3]
+
+V4<-c(MATRIZCOV[,4]-MATRIZCOV[4,4])
+V4a = c(MATRIZCOV[,4])
+V4a[-4]
+
+V5<-c(MATRIZCOV[,5]-MATRIZCOV[5,5])
+V5a = c(MATRIZCOV[,5])
+V5a[-5]
+
+V6<-c(MATRIZCOV[,6]-MATRIZCOV[6,6])
+V6a = c(MATRIZCOV[,6])
+V6a[-6]
+
+V7<-c(MATRIZCOV[,7]-MATRIZCOV[7,7])
+V7a = c(MATRIZCOV[,7])
+V7a[-7]
+
+V8<-c(MATRIZCOV[,8]-MATRIZCOV[8,8])
+V8a = c(MATRIZCOV[,8])
+V8a[-8]
+
+V9<-c(MATRIZCOV[,9]-MATRIZCOV[9,9])
+V9a = c(MATRIZCOV[,9])
+V9a[-9]
+
+V10<-c(MATRIZCOV[,10]-MATRIZCOV[10,10])
+V10a = c(MATRIZCOV[,10])
+V10a[-10]
+
+#Medias de cada vector
+R1<-mean(V1a)
+R2<-mean(V2a)
+R3<-mean(V3a)
+R4<-mean(V4a)
+R5<-mean(V5a)
+R6<-mean(V6a)
+R7<-mean(V7a)
+R8<-mean(V8a)
+R9<-mean(V9a)
+R10<-mean(V10a)
+
+
+CovarMedia<-sum(R1,R2,R3,R4,R5,R6,R7,R8,R9,R10)
+
+CovarianzaMedia<-CovarMedia/10
+
+RiesNoDiver<-CovarianzaMedia*9/10
+
+VarianzaP<-RD+RiesNoDiver
 
   
     
