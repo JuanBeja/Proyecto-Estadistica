@@ -36,8 +36,7 @@ Proporciones_A4Trans = cbind(Proporciones_A4)
 View(Proporciones_A4Trans)
 InterM <- read_excel("2020 1s/Estadistica/InterM.xlsx")
 View(InterM)
-InterM1=c(InterM,InterM,InterM,InterM,InterM,InterM,InterM,InterM,InterM,InterM)
-Var_Portafolio = Proporciones_A4Trans*InterM1
+Var_Portafolio = Proporciones_A4Trans*InterM
 var_A4 = sum(Var_Portafolio)
 Desviacion_A4 = var_A4^(1/2)
 Retorno_A4 = sum(Retornos1*Proporciones_A4)
@@ -48,8 +47,7 @@ Retornos1 = c(MAVAL,MNUTRESA,MCEMARGOS,MBANCOLO,MBOGOTA,MAVIANCA,MGRUPOSURA,MECO
 Proporciones_A8 = c(0.29,0.74,-0.57,0.49,0.54,-0.31,-0.09,0.23,-0.21,-0.11)
 Intermedia2 <- read_excel("2020 1s/Estadistica/Intermedia2.xlsx")
 View(Intermedia2)
-InterMed = c(Intermedia2,Intermedia2,Intermedia2,Intermedia2,Intermedia2,Intermedia2,Intermedia2,Intermedia2,Intermedia2,Intermedia2)
-Var_Portafolio1 = Proporciones_A8*InterMed
+Var_Portafolio1 = Proporciones_A8*InterMedia2
 Var_PortafolioA8 = sum(Var_Portafolio1)+0.0071
 Desviacion_A8 = sqrt(Var_PortafolioA8)/10
 Retorno_A8 = sum(Retornos1*Proporciones_A8)+0.037
