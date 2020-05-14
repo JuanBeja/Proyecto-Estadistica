@@ -75,6 +75,15 @@ Var_PortafolioMV = sum(Proporciones_MV*IntermediaMV)
 Desv_PortafolioMinV = Var_PortafolioMV^(1/2)
 Retorno_MinV = sum(Retornos1*Proporciones_MV)
 
+#Portafolio Ingenuo
+Retornos1 = c(MAVAL,MNUTRESA,MCEMARGOS,MBANCOLO,MBOGOTA,MAVIANCA,MGRUPOSURA,MECOPETL,MEXITO,METB)
+PIngen <- c(10/100,10/100,10/100,10/100,10/100,10/100,10/100,10/100,10/100,10/100)
+Intermedia4 <- read_excel("2020 1s/Estadistica/Intermedia4.xlsx")
+View(Intermedia4)
+Var_PortafolioING = sum(PIngen*Intermedia4)
+Desv_PortafolioING = sqrt(Var_PortafolioING)
+Retorno_ING = sum(Retornos1*PIngen)
+
 #fRONTERA EFICIENTE
 DESVIACIONES = c(0.009,0.012,0.018,0.032,0.064,0.09,0.012)
 RETORNOSFE = c(0.000398537,0.000597194,0.000980104,0.001854322,0.003834443,0.005439652,0.00729074)
