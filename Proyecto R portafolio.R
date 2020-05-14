@@ -112,10 +112,15 @@ VarBANCOLO<-RIESGOBANCOLO^2
 VarBOGOTA<-RIESGOBOGOTA^2
 VarAVIANCA<-RIESGOAVIANCA^2
 VarGRUPOSURA<-RIESGOGRUPOSURA^2
-Var<-RIESGOCEMARGOS^2
+VarECOPETROL<-RIESGOECOPETROL^2
+VarEXITO<-RIESGOEXITO^2
+VarETB<-RIESGOETB^2
+
 Varianzas<-c(VarGS,VarGA,VarBC,VarBB)
 VarianzaMedia<-mean(Varianzas)
-Riesgodiver<-VarianzaMedia/4
+RD <-VarianzaMedia/10
+
+Riesgo no diversificable
 MatCov<-cov(Retornos[,1:4])
 V1<-c(MatCov[,1])
 V2<-c(MatCov[,2]-MatCov[2,2])
