@@ -95,6 +95,51 @@ SharpeETB<-(METB-r0)/RIESGOETB
 Sharpes<- c(SharpeAVAL,SharpeNUTRESA,SharpeCEMARGOS,SharpeBANCOLO,SharpeBOGOTA,SharpeAVIANCA,SharpeSURA,SharpeECOPETROL,SharpeEXITO,SharpeETB)
 RAR <- r0+ (Sharpes*riesgoCOLCAP)
 
+VarIngen <- c(25/100,25/100,25/100,25/100)*cov(Retornos[,1:4])
+a<-c(25/100,25/100,25/100,25/100)
+MatrizTrans1<-cbind(a)
+Varingenuo<-Intermedia*MatrizTrans1
+c(Varingenuo)
+c(Varingenuo[1])
+f<-c(Varingenuo[1])
+unlist(Varingenuo)
+unlist(Varingenuo[,1])
+cbind(Varingenuo[1])
+f2<-cbind(Varingenuo[1])
+sum(f2)
+Varianza<-f2
+VarianzaIngenuo<-sum(Varianza)
+RetornosEsp<-c(RTGS,RTGA,RTBC,RTBB)
+RetornoIngen<-RetornosEsp*a
+z<-cbind(RetornoIngen)
+RetornoIngenuo<-sum(z)
+VarGS<-RIGS^2
+VarGA<-RIGA^2
+VarBC<-RIBC^2
+VarBB<-RIBB^2
+Varianzas<-c(VarGS,VarGA,VarBC,VarBB)
+VarianzaMedia<-mean(Varianzas)
+Riesgodiver<-VarianzaMedia/4
+MatCov<-cov(Retornos[,1:4])
+V1<-c(MatCov[,1])
+V2<-c(MatCov[,2]-MatCov[2,2])
+V2a<-c(MatCov[,2])
+V2a[-2]
+V2<-V2a[-2]
+v3a<-c(MatCov[,3])
+V3<-v3a[-3]
+V4<-c(MatCov[1:3,4])
+V1<-V1[-1]
+mean(mean(V1),mean(V2),mean(V3),mean(V4))
+R<-mean(V1)
+X<-mean(V1)
+L<-mean(V1)
+W<-mean(V1)
+CovarMedia<-sum(R,X,L,W)
+CovarianzaMedia<-CovarMedia/4
+RiesNoDiver<-CovarianzaMedia*3/4
+VarianzaP<-Riesgodiver+RiesNoDiver
+
   
     
   
