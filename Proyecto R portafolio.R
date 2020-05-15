@@ -243,6 +243,11 @@ boxplot(Bloomberg[2:1396,1:10])
  #Resumen
 summary(Bloomberg)
     
-  
+ 
+#Boxplot del retorno promedio de las acciones
+
+layout(matrix(c(1:1), nrow=1, byrow=FALSE))
+
+boxplot(Retornos1,main="Retornos promedio")
   
   
