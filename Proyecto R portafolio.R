@@ -240,7 +240,8 @@ boxplot(Bloomberg[2:1396,9],main="Exito")
 boxplot(Bloomberg[2:1396,10],main="Etb")
 #Todas
 boxplot(Bloomberg[2:1396,1:10])
-  
+ #Resumen
+summary(Bloomberg)
     
   
   
