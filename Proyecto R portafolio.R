@@ -249,5 +249,10 @@ summary(Bloomberg)
 layout(matrix(c(1:1), nrow=1, byrow=FALSE))
 
 boxplot(Retornos1,main="Retornos promedio")
-  
+
+  RIESGO_ =c(RIESGOETB,RIESGOAVIANCA,RIESGOAVAL,RIESGONUTRESA,RIESGOCEMARGOS,RIESGOBANCOLO,RIESGOBOGOTA,RIESGOSURA,RIESGOECOPETL,RIESGOEXITO,Desviacion_A4,Desviacion_A8,Desviacion_A10)
+RETORNO_ =c(METB,MAVIANCA,MAVAL,MNUTRESA,MCEMARGOS,MBANCOLO,MBOGOTA,MGRUPOSURA,MECOPETL,MEXITO,Retorno_A4,Retorno_A8,Retorno_A10)
+plot(RIESGO_,RETORNO_,main = "RiesgoVSRetorno",pch =c(1,2,3,4,5,6,7,8,9,10,11,12,13))
+legend("left",legend = c("Etb","Avianca","Aval","Nutresa","Argos","Bancolombia","Bogotá","Sura","Ecopetrol","Éxito","Portafolio1","Portafolio2","Portafolio3"),pch =c(1,2,3,4,5,6,7,8,9,10,11,12,13))
+
   
