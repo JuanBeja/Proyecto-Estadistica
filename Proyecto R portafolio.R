@@ -40,7 +40,7 @@ Var_Portafolio = Proporciones_A4Trans*InterM
 var_A4 = sum(Var_Portafolio)
 Desviacion_A4 = var_A4^(1/2)
 Retorno_A4 = sum(Retornos1*Proporciones_A4)
-Utilidad_A4 = (Retorno_A4-(2*var_A4))*100
+Utilidad_A4 = (Retorno_A4-(2*var_A4))
 
 "Portafolio 2"
 Retornos1 = c(MAVAL,MNUTRESA,MCEMARGOS,MBANCOLO,MBOGOTA,MAVIANCA,MGRUPOSURA,MECOPETL,MEXITO,METB)
