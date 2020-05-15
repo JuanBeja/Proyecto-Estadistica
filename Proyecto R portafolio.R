@@ -238,7 +238,8 @@ boxplot(Bloomberg[2:1396,8],main="Ecopetrol")
 boxplot(Bloomberg[2:1396,9],main="Exito")
 #BlogspotEtb
 boxplot(Bloomberg[2:1396,10],main="Etb")
-
+#Todas
+boxplot(Bloomberg[2:1396,1:10])
   
     
   
